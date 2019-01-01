@@ -1,0 +1,36 @@
+Database:
+
+
+# USERTABLE for username, Password and the Exams list that a candidate can take. 
+CREATE table "USERTABLE" (
+    "USERNAME"   VARCHAR2(255),
+    "PASS"       VARCHAR2(255)
+ “EXAM”    VARCHAR2(255)
+)
+
+Insert into assa_user.USERTABLE (USERNAME,PASS,EXAM) values (“admin”,”admin”,”1,2,3”);
+
+
+#EXAMLIST: Each Exam has a corresponding number which is used in USERTABLE.
+CREATE table "EXAMLIST" (
+    "S_NO"       NUMBER(3,0),
+    "EXAM"       VARCHAR2(255)
+)
+
+
+Insert into assa_user. EXAMLIST (S_NO, EXAM) values (“1”,”GRE”);
+Insert into assa_user. EXAMLIST (S_NO, EXAM) values (“2”,”IELTS”);
+Insert into assa_user. EXAMLIST (S_NO, EXAM) values (“3”,”BANK_PO”);
+
+
+# QALIST: It has a list of Questions along with the Exam name and Quesion type.
+CREATE table "QALIST" (
+    "EXAMLIST"   VARCHAR2(255),
+    "TYPE"   VARCHAR2(255),
+    "QUESTION"   VARCHAR2(255)
+)
+
+Insert into  QALIST  (EXAMLIST,TYPE, QUESTION) values (“BANK_PO”,” VERBAL”,” 
+An increasing number of people are becoming slaves of the Internet and they depend on it for their daily tasks . Do the advantages of this trend outweigh the disadvantages? Agree;Disagree;Don't know;I know ”);
+Insert into  QALIST  (EXAMLIST,TYPE, QUESTION) values (“BANK_PO”,” VERBAL”,”Vincent delivers 37 newspapers to customers in his neighbourhood. It takes Vincent 50 minutes to deliver all the papers. Are you Indian; Are you there;Are you option3; I am here ”);
+
